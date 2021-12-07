@@ -1,0 +1,106 @@
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  height: 100%;
+}
+/* Layout style for main div */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem; /*first 50px is for header, rest fragment for main, last 50px is for footer*/
+  height: 100%;
+}
+header {
+  grid-area: header; /* connecting header to grid-template-areas */
+  background-color: #203040;
+}
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #fff;
+}
+/* Commoon classes for all elements */
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8000;
+}
+/* Header */
+header a {
+  /*header a means all links inside header*/
+  color: #fff;
+  padding: 1rem;
+}
+a.brand {
+  /*anchor that has brand class */
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.row {
+  display: flex; /*create items next to each other not in seperate lines*/
+  flex-wrap: wrap; /* to make flex responsive, if there is not enough space it gonna be spearate lines */
+  justify-content: space-between; /* maximun distance between elements in a row*/
+  align-items: center; /*aling vertical center*/
+}
+/*footer*/
+.row.center {
+  justify-content: center;
+}
+/* Images */
+img {
+  border-radius: 0.5rem;
+}
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+/* Card */
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-body > * {
+  /* '*' stands for all element inisde card body */
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+/* raiting*/
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
